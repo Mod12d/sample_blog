@@ -1,5 +1,24 @@
+$baseFont:"Avenir Next";
 .container {
+  background: #E64980;
+  text-align: justify;
+  padding: 4rem 0;
+  & {
+    
+    font-size:36px;
+    color:#fff;
+    font-family: $baseFont;
+  }
+  
+}
+
+.head {
   padding: 0 2rem;
+  background: #222;
+  span{
+  font-size:12px;
+  color:#fff;
+  }
 }
 
 .main {
