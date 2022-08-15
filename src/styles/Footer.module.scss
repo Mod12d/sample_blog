@@ -1,0 +1,13 @@
+$baseFontSize: 18 px;
+$baseFont: "Avenir Next";
+.logo{
+    display: block;
+    margin-left: auto;
+  }
+
+
+@media screen and (max-width: 640px) {
+  .navItem {
+      display: none;
+  }
+}

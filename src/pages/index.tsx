@@ -3,12 +3,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.scss'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 const Home: NextPage = () => {
 
   return (
-    <div>
-      <Header />
+    <>
+    <Header />
       <section className={styles.container}>
         <title>Shimabu IT University</title>
         <br/>
@@ -22,7 +23,8 @@ const Home: NextPage = () => {
           </a>
         </div>
       </main>
-      </div>
+    <Footer />
+   </>
   )
 }
 
