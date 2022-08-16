@@ -1,0 +1,42 @@
+$baseFontSize: 18 px;
+$baseFont: "Avenir Next";
+
+.container{
+ margin-top:20px;
+ margin-left:10%;
+ margin-right:10%;
+}
+.logo{
+    top:25px;
+    display: block;
+    margin-left: 50%;
+  }
+
+.input{
+  width: 100%;
+}
+
+.button{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 13px 22px;
+  gap: 10px;
+  border: 1px;
+  border-radius: 32px;
+  width: 154px;
+  height: 45px;
+  margin-left: 50%;
+  margin-top: 2%;
+  padding: auto;
+  font-size: 16px;
+
+  background: #25262B;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 640px) {
+  .navItem {
+      display: none;
+  }
+}
