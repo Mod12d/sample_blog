@@ -9,8 +9,8 @@ const Header: NextPage = () => {
   const [isClicked, setIsClicked] = useState(false)
 
   function darkMode() {
-  var element = document.body;
-  element.classList.toggle("dark-mode");
+  //var element = document.body;
+  //element.classList.toggle("dark-mode");
   setIsClicked(isClicked => !isClicked);
 }
   return (
