@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { InferGetStaticPropsType, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from "next/link"
@@ -8,8 +8,15 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Blog from '@/components/Blog'
 import Portfolio from '@/components/Portfolio'
+import { client } from '@/libs/client'
 
-const Home: NextPage = () => {
+type blog={
+  blog : Array<blog>
+}
+
+const Home:NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  blog
+}: Props) => {
   return (
     <>
     <Header />
@@ -19,7 +26,17 @@ const Home: NextPage = () => {
           <p>しまぶーのポートフォリオのためのページです</p>
         </div>
       </section>    
-      <Blog />
+      <div>
+      <ul>
+        {blog.map((blog) => (
+          <li key={blog.id}>
+            <Link href={`/blog/${blog.id}`}>
+              <a>{blog.title}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
      <button className={styles.button}>
       View All
      </button>      
@@ -31,5 +48,15 @@ const Home: NextPage = () => {
    </>
   )
 }
+
+export const getStaticProps = async () => {
+  const data = await client.get({ endpoint: "blog" });
+
+  return {
+    props: {
+      blog: data.contents,
+    },
+  };
+};
 
 export default Home
